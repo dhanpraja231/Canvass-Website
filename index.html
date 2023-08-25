@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="css/faq.scss"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+      <!-- Page Meta Tags-->
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <meta name="keywords" content="">
+  
+      <!-- Favicon -->
+      <link rel="apple-touch-icon" sizes="180x180" href="/ImageAssets/ST LOGO Transparent.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/ImageAssets/ST LOGO Transparent.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/ImageAssets/ST LOGO Transparent.png">
+      <link rel="mask-icon" href="./assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#da532c">
+      <meta name="theme-color" content="#ffffff">
+      
+      <!-- Vendor CSS -->
+      <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+  
+      <!-- Main CSS -->
+      <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
+  <!-- <link rel="stylesheet" href="css/tile.css"> -->
+  <title>8x ventures</title>
+  <style>
+
+    .navbar {
+      position: fixed;
+      top: -100px;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      transition: top 0.3s ease-in-out;
+    }
+
+    .navbar.navbar-scrolled {
+      top: 0px;
+    }
+  
+    .navbar-toggler-icon{
+        color: #ffffff;
+    }
+
+    .nav-item{
+      padding-left: 30px;
+      padding-right: 30px;
+      font-size: larger;
+    }
+    
+    .pitch-button.nav-link.pitch-button{
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .splash{
+      flex-direction: row;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      margin-top: 150px;
+      text-align: center;
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .splash.splash-scrolled{
+      opacity: 0;
+    }
+
+    .pitch-button{
+        /* background-color:#132949 ; */
+        background-color:#333 ;
+        color: #ffffff;
+      padding-left: 30px;
+      padding-right: 30px;
+      border-radius: 5px;
+      
+      
+    }
+
+    .nav-link.pitch-button:hover{
+      /* background-color: transparent; */
+      color:#4f4f4f ;
+    }
+
+    .nav-item{
+      margin: auto;
+    }
+
+    .main-content{
+      opacity: 0;
+    }
+
+    .main-content.main-content-scrolled{
+      opacity: 1;
+    }
+
+    .slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 50;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .slide .info {
+    position: absolute;
+    color: white;
+    bottom: 10%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    text-align: justify;
+    font-family: 'Anton', sans-serif;
+  
+    
+    max-width: 600px;
+  }
+.slide .info h2{
+  font-size: 65px;
+}
+
+.slide .info p{
+  font-size: 20px;
+}
+
+/* Optional: Add some styles for navigation buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+/* Dot styles */
+.dots-container {
+    /* background-color: #717171; */
+    /* display: flex; */
+    align-items: center;
+    position: fixed;
+    top: 90vh;
+    width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Dot styles */
+.dots-container {
+    /* background-color: #717171; */
+    /* display: flex; */
+    align-items: center;
+    position: absolute;
+    top: 90vh;
+    width: 100%;
+  text-align: right;
+  margin-top: 10px;
+  padding-right: 10%; 
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: grey;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+
+
+/* Active dot style */
+.active {
+  background-color: white;
+ 
+    transform: scale(1.5); /* Make the current dot larger */
+
+}
+
+.video {
+  filter: opacity(90%);
+ 
+  }
+
+  .slide .info{
+  /* background-color: black; */
+  padding-left: 4%;
+}
+
+
+@media screen and (max-width: 500px) {
+  .slide .info{
+  /* background-color: black; */
+  padding-left: 0%;
+  }
+
+}
+
+.slide .info h2{
+  font-size: 50px;
+  color: white;
+}
+
+.slide .info p{
+  font-size: 20px;
+  color: white;
+}
+
+
+
+/* Define the animation */
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomAnimation {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+    @keyframes mymove {
+  from {background-color: #ffffff;}
+  50%{background-color: #fafafa;}
+  to {background-color: #ffffff;}
+    }
+    .navbar-logo {
+      animation: animateLogo 10s infinite;
+    }
+
+  @keyframes animateLogo {
+    0% {
+      opacity: 1;
+      
+    }
+    50%{
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+      
+    }
+  }
+
+  @media only screen and (max-width: 1000px) and (min-width: 760px) {
+    .adjust-text{
+      padding-top: 30px;
+      /* background-color: #0077b5; */
+    }
+  }
+
+
+  </style>
+  
+  <link rel="stylesheet" href="css/cube.css">
+
+</head>
+<body>
+  
+  <div class="splash" id="splash">
+   
+    <img src="/ImageAssets/ST LOGO Splash.png" alt="Company logo" width="500px" style="object-fit:contain;" >
+
+  </div>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding-top:15px ; padding-bottom: 15px; padding-left: 0; padding-right: 0; margin-right: 0;">
+    <div class="container">
+      <a class="navbar-brand navbar-logo" href="index.html"><img src="/ImageAssets/ST navbar 2.png" alt="Company logo" width="180px" style="height: auto; object-fit: fill;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="portfolio.html">Portfolio</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="team.html">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="team.html">Contact</a>
+          </li>
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="#">Blog</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="pitch-button nav-link " href="#">   Join us   </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div style="" class="main-content">
+  <div class="slideshow-container">
+    <div class="slide">
+      <img src="ImageAssets/who_we_are.jpg">
+      <div class="info">
+        <h2>Who we are</h2>
+        <p> We are a DeepTech Venture Capital Firm focusing on startups that will fundamentally transform industries and economies through a strong scientific and research foundation. As a fund, we are firmly rooted in the DeepTech ecosystem to identify, invest, and strategically grow our portfolio
+    
+            companies through our strong domain expertise, fast-growing track record and extensive network.</p>
+    </div>
+    </div>
+
+    <div class="slide">
+        <img src="ImageAssets/why_we_start1.jpg">
+        <div class="info">
+          <h2>Why we start</h2>
+          <p>Addressing larger problems will require technological disruption. We strive to solve the world's most critical societal and environmental challenges through disruptive innovation. Disruptive innovation necessitates a shift in customer usage, business model, and demonstrated performance. We aim to meaningfully influence this transition towards sustainability.</p>
+      </div>
+      </div>
+
+
+      <div class="slide">
+        <img src="ImageAssets/why_we_start.jpg" style="  filter: brightness(20%);">
+        <div class="info">
+          <h2>How we think</h2>
+          <p>Sustainable solutions are complex, interdisciplinary and require deep technical and market research. Capturing this value early enables us to strategically impact long-term outcomes. We believe that investing in these technologies in select sectors can make a real impact while generating high-risk-adjusted returns.</p>
+      </div>
+      </div>
+   
+    
+    
+    
+  
+  <div class="dots-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+
+  </div>
+</div>
+</div>
+
+<script >
+  let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+let slides = document.getElementsByClassName("slide");
+let dots = document.getElementsByClassName("dot");
+for (let i = 0; i < slides.length; i++) {
+  slides[i].style.display = "none";
+}
+slideIndex++;
+if (slideIndex > slides.length) {
+  slideIndex = 1;
+}
+for (let i = 0; i < dots.length; i++) {
+  dots[i].classList.remove("active");
+}
+slides[slideIndex - 1].style.display = "block";
+dots[slideIndex - 1].classList.add("active")
+setTimeout(showSlides, 20000); // Change slide every 3 seconds
+}
+
+// Optional: Add event listeners for navigation buttons (prev and next)
+document.querySelector(".prev").addEventListener("click", function() {
+slideIndex--;
+if (slideIndex < 1) {
+  slideIndex = slides.length;
+}
+showSlides();
+});
+
+document.querySelector(".next").addEventListener("click", function() {
+slideIndex++;
+if (slideIndex > slides.length) {
+  slideIndex = 1;
+}
+showSlides();
+});
+
+function showSlides2(n) {
+let slides = document.getElementsByClassName("slide");
+let dots = document.getElementsByClassName("dot");
+
+if (n > slides.length) {
+  slideIndex = 1;
+} else if (n < 1) {
+  slideIndex = slides.length;
+}
+
+for (let i = 0; i < slides.length; i++) {
+  slides[i].style.display = "none";
+}
+
+for (let i = 0; i < dots.length; i++) {
+  dots[i].classList.remove("active");
+}
+
+slides[slideIndex - 1].style.display = "block";
+dots[slideIndex - 1].classList.add("active");
+}
+
+function currentSlide(n) {
+showSlides2(slideIndex = n);
+}
+
+
+
+
+</script>
+ 
+  
+  
+  
+  
+
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/2d28a88825.js" crossorigin="anonymous"></script>
+
+  
+  <!-- Include Bootstrap JS (popper.js and bootstrap.js) for the dropdown menu -->
+  <script>
+    window.addEventListener('scroll', function() {
+      var splash = document.querySelector('.splash');
+      var navbar = document.querySelector('.navbar');
+      var mainContent = document.querySelector('.main-content');
+      var scrolled = window.scrollY > 400;
+      //if(scrolled){
+      navbar.classList.toggle('navbar-scrolled', scrolled);
+      splash.classList.toggle('splash-scrolled',scrolled);
+      mainContent.classList.toggle('main-content-scrolled',scrolled)
+    //   window.scrollTo(1050);
+    // }
+    });
+
+  var header = document.getElementById('splash');
+
+function fadeOutOnScroll(element) {
+  if (!element) {
+    return;
+  }
+  
+  var distanceToTop = window.pageYOffset + element.getBoundingClientRect().top;
+  var elementHeight = element.offsetHeight;
+  var scrollTop = document.documentElement.scrollTop;
+  
+  var opacity = 1;
+  if(window.scrollY>2000){
+    opacity=0;
+  }
+  else{
+  opacity = (1 - (scrollTop ) / elementHeight)*1;
+  if (opacity >= 0) {
+    element.style.opacity = opacity;
+  }
+}
+  
+}
+
+
+
+function scrollHandler() {
+  fadeOutOnScroll(header);
+}
+
+window.addEventListener('scroll', scrollHandler);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
